@@ -1,0 +1,88 @@
+<layout>
+
+    <data>
+
+        <variable
+            name="data"
+            type="org.sopt.structure.domain.Data"/>
+
+        <variable
+            name="viewModel"
+            type="org.sopt.structure.architecture.impl.mvvm.EntryViewModel"/>
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_view_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="4dp"
+            android:textSize="16dp"
+            android:text='@{String.format("%d / %s", data.id, data.name)}' />
+
+        <EditText
+            android:id="@+id/edit_text_association"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="4dp"
+            android:textAlignment="center"
+            android:textSize="16dp"
+            android:text="@{data.association}"/>
+
+        <Button
+            android:id="@+id/button_query"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Query"
+            android:onClick="@{viewModel.onClick}"/>
+
+    </LinearLayout>
+
+</layout>
+
+<!--
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_view_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="4dp"
+        android:textSize="16dp"
+        android:text="NAME_PLACEHOLDER" />
+
+    <EditText
+        android:id="@+id/edit_text_association"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="4dp"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        android:text="ASSOCIATION_PLACEHOLDER" />
+
+    <Button
+        android:id="@+id/button_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="Query"/>
+
+</LinearLayout>
+
+-->
